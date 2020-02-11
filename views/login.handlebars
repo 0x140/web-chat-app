@@ -1,0 +1,33 @@
+<div class="container mt-3 loginContainer" id="">
+			<h1 class="loginTitle">
+				<center>Welcome to the login page</center>
+			</h1>
+			<form class="form-group row loginForm" method="POST" action="process?form=login" id="">
+				<div>
+					<label for="fieldName" class="loginLabel">Username:</label>
+					<br>
+					<input class="form-controls"type="text" name="name" placeholder="Enter Your Username" required>
+					<br>
+					<br>
+
+					<label for="fieldPassword" class="loginLabel">Password:</label>
+					<br>
+					<input class="form-controls" type="password" name="password" placeholder="Enter Your Password" required/>
+					<br>
+					<br>
+
+					<button class="btn btn-primary" type="submit" value="Submit">Submit</button>
+					<br>
+
+					<p>Not Having an Account?
+					<a href="./register">Register</a>
+					</p>
+
+					<!-- TODO: add password reset -->
+					<a href="#">forgot Password?</a>
+					<BR>
+					<p>&copy;Copyright 2020</p>
+				</div>
+			</form>
+			
+		</div>
