@@ -1,0 +1,42 @@
+<div  background="silver">
+<div class="pt-3 bg-success">
+	<ul class="nav nav-tabs bg-dark">
+		<li class="nav-item">
+			<a class="nav-link active" href="#home">Home</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link active" href="#profile">Profile</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link active" href="#chats">chats</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link active" href="#friends">Friends</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link active" href="#log-out">log-out</a>
+		</li>
+	</ul>
+</div>
+
+
+<div id="chatPage">
+	<form class="form-group" id="messageForm">
+		<div class="row">
+			<input type="text" name="message" id="message" class="form-control col-8" autocomplete="false" />
+			<button class="btn btn-primary" id="sendMessage col-4">send</button>
+		</div>
+	</form>
+</div>
+</div>
+
+
+<script type="text/javascript" src="js/tabSizeApart.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	let socket = io();
+</script>

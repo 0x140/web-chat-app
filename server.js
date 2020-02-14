@@ -1,19 +1,24 @@
 const express = require("express");
 const app = express();
+const server = require('http').createServer(app);
+let io = require('socket.io').listen(server);
+
+users = [];
+connections = [];
+
+//the body-parser middleware
+app.use(require("body-parser")());
+
+//static files middleware (css,js,images)
+app.use(express.static(__dirname+'/public'));
 
 //handle the views and the layout
 let handlebars = require('express3-handlebars').create({defaultLayout:'main'});
 app.engine('handlebars',handlebars.engine);
 app.set('view engine','handlebars');
 
-//the body-parser middleware
-app.use(require("body-parser")());
-
 //set the PORT
-app.set('port',process.env.PORT || 6004);
-
-//static files middleware (css,js,images)
-app.use(express.static(__dirname+'/public'));
+app.set('port',process.env.PORT || 6040);
 
 //the root webpage
 app.get('/',(req,res) =>{
@@ -38,9 +43,9 @@ app.get('/login',(req,res)=>{
 */
 app.post('/process',(req,res)=>{
 	console.log("Below are the user login details")
-	console.log(`name :${req.body.name}`);
+	console.log(`name :${req.body.username}`);
 	console.log(`Password :${req.body.password}`);
-	res.redirect(303,'/')
+	res.redirect(303,'/account')
 });
 
 /*
@@ -74,6 +79,13 @@ app.post('/createAccount',(req,res)=>{
 	res.redirect(303,'/thank-you');
 });
 
+//user's account
+app.get('/account',(req,res)=>{
+	res.render('account');
+	msg = req.body.message;
+	console.log(msg)
+});
+
 //the page-not-found error 404 middleware 
 app.use(function(req,res,next){
 	res.status(404);
@@ -87,8 +99,15 @@ app.use(function(err,req,res,next){
 	res.render('500');
 });
 
+//connections and sockets
+io.on('connection',function(socket){
+	connections.push(socket);
+	console.log('Connected');
+	console.log('connected: %s sockets',connections.length);
+});
+
 //the server 
-app.listen(app.get('port'),function(){
-	console.log(`Express server started on http://localhost:`
+server.listen(app.get('port'),function(){
+	console.log(`Express server started in ${app.get('env')} on http://localhost:`
 		+`${app.get('port')}.Press CTRL+C to terminate the connection...`);
 });

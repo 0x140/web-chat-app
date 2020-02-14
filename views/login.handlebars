@@ -1,33 +1,41 @@
-<div class="container mt-3 loginContainer" id="">
-			<h1 class="loginTitle">
-				<center>Welcome to the login page</center>
-			</h1>
-			<form class="form-group row loginForm" method="POST" action="process?form=login" id="">
-				<div>
-					<label for="fieldName" class="loginLabel">Username:</label>
-					<br>
-					<input class="form-controls"type="text" name="name" placeholder="Enter Your Username" required>
-					<br>
-					<br>
-
-					<label for="fieldPassword" class="loginLabel">Password:</label>
-					<br>
-					<input class="form-controls" type="password" name="password" placeholder="Enter Your Password" required/>
-					<br>
-					<br>
-
-					<button class="btn btn-primary" type="submit" value="Submit">Submit</button>
-					<br>
-
-					<p>Not Having an Account?
-					<a href="./register">Register</a>
-					</p>
-
-					<!-- TODO: add password reset -->
-					<a href="#">forgot Password?</a>
-					<BR>
-					<p>&copy;Copyright 2020</p>
-				</div>
-			</form>
-			
+<div id="loginPage">
+<div class="d-flex justify-content-center float-center pt-5">
+	<form class="form-group border border-info rounded-lg pt-4 pl-4 pr-4 pb-1" method="POST" action="process?form=login">
+		<div class="border border-secondary rounded-bottom rounded-lg text-center bg-secondary mb-2">
+			<h4 class="text-monospace font-weight-bold">Login</h4>
 		</div>
+		<div class="form-inline mb-2">
+			<div class="form-group row">
+				<label for="fieldName" class="col-sm-2 col-form-label">Username:&nbsp;</label>
+			</div>
+			<div class="form-group">
+				<input type="text" name="username" class="form-control col-sm-10" placeholder="Username" required />
+			</div>
+		</div>
+		<div class="form-inline">
+			<div class="form-group row">
+				<label for="fieldPassword" class="col-sm-2 col-form-label">Password:&nbsp;</label>
+			</div>
+			<div class="form-group">
+				<input type="password" name="password" class="form-control col-sm-10" placeholder="Password" required />
+			</div>
+		</div>
+		<div class="form-inline d-flex justify-content-end row pr-4">
+			<button class="btn btn-primary mt-2 float-left">login</button>
+		</div>
+		<div class="d-flex justify-content-start">
+			<p >Not Having an Account?
+				<a href="./register" >Register</a>
+			</p>
+		</div>
+		<div class="d-flex justify-content-start">
+			<!-- TODO: add password reset -->
+			<a href="#" class="text-monospace">forgot Password?</a>
+		</div>
+		<div class="d-flex justify-content-center mt-3">
+			<p>&copy;Copyright 2020</p>
+		</div>
+	</form>
+</div>
+
+</div>

@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#messageForm{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	padding: 3px;
+}
+
+#message{
+	padding: 7px;
+	margin-right: .5%;
+}
+
+#sendMessage{
+	padding: 10px;
+	padding-top: 2px;
+}
+
+#chatPage{
+	background-color: red;
+}

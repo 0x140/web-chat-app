@@ -5,32 +5,11 @@
 	justify-content: center;
 }
 
-.loginTitle{
-	font-family: monospace;
-	font-size: 38pt !important;
-	color: navy;
-	outline-color: transparent;
-	text-decoration: underline;
-	text-decoration-color: grey;
+
+@media (min-width: 992px) {
+	#loginPage{
+		margin-top: 6%;
+	}
 }
 
-.loginContainer{
-	border: 1px groove green;
-	border-radius: 8px;
-	background-color: silver;
-	margin-left:10px;
-	margin-right: 10px;
-	font-size: 15pt;
-}
-
-.loginForm{
-	border: 1px transparent;
-	border-radius: 8px;
-	background-color: silver;
-	margin:40px !important;
-}
-
-.loginLabel{
-	font-size: 16pt;
-}
 
