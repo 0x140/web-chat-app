@@ -1,7 +1,15 @@
 const express = require("express");
 const app = express();
+const mongoose = require('mongoose');
 const server = require('http').createServer(app);
 let io = require('socket.io').listen(server);
+
+const MongoURI = require('./config.js').MongoURI;
+
+mongoose.connect(MongoURI, { useNewUrlParser: true })
+	.then(() => 'Mongo Connect...')
+	.catch(err => console.log(err));
+
 
 users = [];
 connections = [];
